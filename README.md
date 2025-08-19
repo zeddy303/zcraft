@@ -16,7 +16,7 @@ Don't forget to update grub!
 
 blacklist intel-ipu6 to /etc/modprobe.d/blacklist.conf
 
-Changes to hyprland configs
+<b>Changes to hyprland configs</b>
 
 .config/hypr/hyprland/general.conf #monitor  = change 1 to auto for dpi
 
@@ -26,5 +26,5 @@ Changes to hyprland configs
 
 .config/hypr/hyprland/keybinds.conf #bind change Super+Alt+<i>n</i> to Super+Shift+<i>n</i> for move to window silently 
 
-Changes to quickshell configs
+<b>Changes to quickshell configs</b>
 change temp localization to F
