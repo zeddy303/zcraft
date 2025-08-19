@@ -13,3 +13,5 @@ bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
 https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup
 
 Don't forget to update grub!
+
+blacklist intel-ipu6 to /etc/modprobe.d/blacklist.conf
