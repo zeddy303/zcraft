@@ -26,5 +26,9 @@ blacklist intel-ipu6 to /etc/modprobe.d/blacklist.conf
 
 .config/hypr/hyprland/keybinds.conf #bind change Super+Alt+<i>n</i> to Super+Shift+<i>n</i> for move to window silently 
 
+Cheap transparent (text is dark) in custom/rules.conf add: windowrulev2 = opacity 0.75 0.65,class:^(kitty)$
+
+bind = Super+Shift, Return, exec, [float; center; size 800 600] kitty #floating kitty
+
 <b>Changes to quickshell configs</b>
-change temp localization to F
+change temp localization to F - set bar.weather.useUSCS to true in ~/.config/illogical-impulse/config.json
