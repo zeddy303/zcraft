@@ -114,4 +114,12 @@ Modify the QuickShell configuration file to change the weather localization.
 
 * Add `:set mouse=v` to your ~/.vimrc file if you want it to be permanent (create ~/.vimrc if it does not exist yet).
 
-* TODO:
+* Pair Bluetooth the cli way (GUI doesn't work)
+
+```
+bluetoothctl
+scan on
+pair C7:ED:55:15:02:B2
+trust C7:ED:55:15:02:B2
+quit
+```
