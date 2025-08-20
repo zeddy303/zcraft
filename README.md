@@ -25,7 +25,7 @@ This guide outlines the steps to install Arch Linux with the Hyprland window man
 5.  Run the setup script for the Hyprland dotfiles.
 
     ```bash
-    bash <(curl -s "[https://end-4.github.io/dots-hyprland-wiki/setup.sh](https://end-4.github.io/dots-hyprland-wiki/setup.sh)")
+    bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
     ```
 
 6.  Follow the official **linux-surface** installation guide to ensure all necessary drivers and configurations are in place for the Surface device.
@@ -108,3 +108,10 @@ Modify the QuickShell configuration file to change the weather localization.
     }
     ```
 
+* Change date to imperial MM/dd
+
+## ✏️ Additional Fine Tuning Changes
+
+* Add `:set mouse=v` to your ~/.vimrc file if you want it to be permanent (create ~/.vimrc if it does not exist yet).
+
+* TODO:
