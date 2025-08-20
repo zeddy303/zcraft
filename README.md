@@ -108,7 +108,7 @@ Modify the QuickShell configuration file to change the weather localization.
     }
     ```
 
-* Change date to imperial MM/dd
+* Change date format to imperial with MM/dd in same json file.
 
 ## ✏️ Additional Fine Tuning Changes
 
@@ -116,10 +116,10 @@ Modify the QuickShell configuration file to change the weather localization.
 
 * Pair Bluetooth the cli way (GUI doesn't work)
 
-```
-bluetoothctl
-scan on
-pair C7:ED:55:15:02:B2
-trust C7:ED:55:15:02:B2
-quit
-```
+  ```
+  bluetoothctl
+  scan on
+  pair C7:ED:55:15:02:B2
+  trust C7:ED:55:15:02:B2
+  quit
+  ```
