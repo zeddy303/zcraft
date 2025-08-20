@@ -6,11 +6,7 @@ This guide outlines the steps to install Arch Linux with the Hyprland window man
 
 ## 🚀 Initial Arch Install
 
-1.  Start a minimal Arch installation. Use `archinstall` with `NetworkManager` and `git` as a minimal set of packages.
-
-    ```bash
-    archinstall minimal NetworkManager git
-    ```
+1.  Start a minimal Arch installation. Use `archinstall` using `NetworkManager` and add `git` package with minimal set of packages.
 
 2.  Reboot the system after the installation is complete.
 
@@ -38,7 +34,7 @@ This guide outlines the steps to install Arch Linux with the Hyprland window man
 
 7.  **Don't forget to update your GRUB configuration** after installing the linux-surface kernel.
 
-8.  Blacklist the **`intel-ipu6`** module by adding the following line to `/etc/modprobe.d/blacklist.conf` to fix potential camera issues.
+8.  Blacklist the **`intel-ipu6`** module by adding the following line to `/etc/modprobe.d/blacklist.conf` to fix potential freezing issues when closing cover.
 
     ```bash
     blacklist intel-ipu6
@@ -50,11 +46,11 @@ This guide outlines the steps to install Arch Linux with the Hyprland window man
 
 These are specific adjustments made to the Hyprland configurations for the Surface Pro 9 setup.
 
-### **`~/.config/hypr/hyprland/general.conf`**
+### **`~/.config/hypr/custom/general.conf`**
 
-* Change the `monitor` setting to `auto` to ensure the DPI is correctly detected.
+* Change the `monitor` setting to `auto` to ensure the DPI is correctly detected. Add: 
     ```
-    monitor = auto
+    monitor=,preferred,auto,auto,transform, 0
     ```
 
 ### **`~/.config/hypr/custom/keybinds.conf`**
@@ -69,13 +65,9 @@ These are specific adjustments made to the Hyprland configurations for the Surfa
     bind = Super+Shift, Return, exec, [float; center; size 800 600] kitty #floating kitty
     ```
 
-### **`~/.config/hypr/hyprland/keybinds.conf`**
-
-* **`Super + B` QuickShell**: Comment out the default `Super + B` keybind to avoid conflicts with the new browser keybind.
-
 ### **Move Window to Workspace Silently**:
 
-* Change the keybind to move a window to a workspace silently from `Super + Alt + N` to **`Super + Shift + N`**. This is useful for moving windows to hidden workspaces.
+* Change the keybind to move a window to a workspace silently from `Super + Alt + N` to **`Super + Shift + N`**. This is useful for moving windows to hidden workspaces but uses easier access +Shift instead of +Alt.
     ```
     bind = Super+Shift, 1, exec, ~/.config/hypr/hyprland/scripts/workspace_action.sh movetoworkspacesilent 1 # [hidden]
     bind = Super+Shift, 2, exec, ~/.config/hypr/hyprland/scripts/workspace_action.sh movetoworkspacesilent 2 # [hidden]
@@ -89,9 +81,14 @@ These are specific adjustments made to the Hyprland configurations for the Surfa
     bind = Super+Shift, 0, exec, ~/.config/hypr/hyprland/scripts/workspace_action.sh movetoworkspacesilent 10 # [hidden]
     ```
 
+
+### **`~/.config/hypr/hyprland/keybinds.conf`**
+
+* **`Super + B` QuickShell**: Comment out the default `Super + B` keybind to avoid conflicts with the new browser keybind.
+
 ### **`~/.config/hypr/custom/rules.conf`**
 
-* Add a rule to make the `kitty` terminal transparent.
+* Add a rule to make the `kitty` terminal transparent. 
     ```
     windowrulev2 = opacity 0.75 0.65,class:^(kitty)$
     ```
