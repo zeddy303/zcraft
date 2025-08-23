@@ -27,9 +27,9 @@ This guide outlines the steps to install Arch Linux with the Hyprland window man
     ```bash
     bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
     ```
-    Or Hyde's (requires go)
+    Or Hyde's (requires base-devel)
     ```bash
-    git clone https://github.com/hyde-project/hyde-config.git
+    git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
     ```
     
 7.  Follow the official **linux-surface** installation guide to ensure all necessary drivers and configurations are in place for the Surface device.
