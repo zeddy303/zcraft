@@ -6,7 +6,7 @@ This guide outlines the steps to install Arch Linux with the Hyprland window man
 
 ## 🚀 Initial Arch Install
 
-1.  Start a minimal Arch installation. Use `archinstall` using `NetworkManager` and add `git` package with minimal set of packages.
+1.  Start a minimal Arch installation. Use `archinstall` using `NetworkManager` and `grub` bootloader and add `git` package with minimal set of packages.
 
 2.  Reboot the system after the installation is complete.
 
@@ -27,14 +27,18 @@ This guide outlines the steps to install Arch Linux with the Hyprland window man
     ```bash
     bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
     ```
-
-6.  Follow the official **linux-surface** installation guide to ensure all necessary drivers and configurations are in place for the Surface device.
+    Or Hyde's
+    ```bash
+    git clone https://github.com/hyde-project/hyde-config.git
+    ```
+    
+7.  Follow the official **linux-surface** installation guide to ensure all necessary drivers and configurations are in place for the Surface device.
 
     * [https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup](https://github.com/linux-surface/linux-surface/wiki/Installation-and-Setup)
 
-7.  **Don't forget to update your GRUB configuration** after installing the linux-surface kernel.
+8.  **Don't forget to update your GRUB configuration** after installing the linux-surface kernel.
 
-8.  Blacklist the **`intel-ipu6`** module by adding the following line to `/etc/modprobe.d/blacklist.conf` to fix potential freezing issues when closing cover.
+9.  Blacklist the **`intel-ipu6`** module by adding the following line to `/etc/modprobe.d/blacklist.conf` to fix potential freezing issues when closing cover.
 
     ```bash
     blacklist intel-ipu6
