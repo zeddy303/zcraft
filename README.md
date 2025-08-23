@@ -129,8 +129,11 @@ Modify the QuickShell configuration file to change the weather localization.
 
   ```
   bluetoothctl
+  agent on #adding this seems to help
+  default-agent #and this
   scan on
-  pair C7:ED:55:15:02:B2
-  trust C7:ED:55:15:02:B2
+  pair C7:ED:55:17:02:B2
+  trust C7:ED:55:17:02:B2
+  connect C7:ED:55:17:02:B2
   quit
   ```
