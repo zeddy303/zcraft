@@ -63,6 +63,11 @@ These are specific adjustments made to the Hyprland configurations for the Surfa
     ```
     bind = Super, B, exec, ~/.config/hypr/hyprland/scripts/launch_first_available.sh "google-chrome-stable" "zen-browser" "firefox" "brave" "chromium" "microsoft-edge-stable" "opera" "librewolf" # Browser
     ```
+* Remove Super+D habit
+
+   ```bash
+  bind = Super+Shift, F, fullscreen, 1 # Maximize - changed to avoid SuperD conflict
+  ``` 
 
 * **Floating Kitty**: Add a new keybind to launch a floating, centered `kitty` terminal.
     ```
@@ -117,6 +122,8 @@ Modify the QuickShell configuration file to change the weather localization.
 ## ✏️ Additional Fine Tuning Changes
 
 * Add `:set mouse=v` to your ~/.vimrc file if you want it to be permanent (create ~/.vimrc if it does not exist yet).
+
+* Edit the /etc/default/grub file and uncomment the `GRUB_SAVEDEFAULT=true` setting.
 
 * Pair Bluetooth the cli way (GUI doesn't work)
 
