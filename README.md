@@ -27,7 +27,7 @@ This guide outlines the steps to install Arch Linux with the Hyprland window man
     ```bash
     bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
     ```
-    Or Hyde's
+    Or Hyde's (requires go)
     ```bash
     git clone https://github.com/hyde-project/hyde-config.git
     ```
