@@ -1,3 +1,5 @@
+WIP WARNING: THIS IS A WORKING COPY AND BEING UPDATED TO ACTUALLY WORK
+
 # Personal AI Infrastructure Implementation Guide
 ## Zane's Setup - Bazzite Linux + Obsidian + n8n
 
@@ -75,7 +77,7 @@ mkdir -p ~/.config/fabric/contexts/telos
 
 Create the context file:
 ```bash
-nano ~/.config/fabric/contexts/telos/context.md
+nano ~/.config/fabric/contexts/telos/telos.md
 ```
 
 Paste a condensed version of your Telos for AI consumption:
@@ -87,17 +89,17 @@ Paste a condensed version of your Telos for AI consumption:
 - 53, Denver (15 years), engaged, DINK
 - BA Film/Video, Executive MBA (2024)
 - 8 years wireless infrastructure at DISH/Boost
-- Meditation practitioner since 1995 (Shambhala background)
+- Meditation practitioner since 1995 
 - r/denver moderator
 
 ## Current Mission
-Career transition: IC → Director track, targeting $165-180K
+Career transition: IC → Director track
 
 ## Active Goals (Q1 2026)
-- Secure role by end of Q1 (Charter primary, backup: 10 apps/week + internal DISH)
+- Secure role by end of Q1 (
 - Python fundamentals by Jan 31 (pandas, data analysis)
 - AI certification by Feb 15
-- Pay off $40K debt by July 2026
+- Pay off debt by July 2026
 
 ## Key Strengths
 - Technology ↔ business bridge (not a formal engineer)
@@ -109,7 +111,7 @@ Career transition: IC → Director track, targeting $165-180K
 - Inconsistent meeting prep (when prepared = great, when not = messy)
 - Filler words ("um") in presentations
 - Imposter syndrome re: technical depth
-- Discomfort with unfamiliar networking
+- Discomfort with business networking
 
 ## Communication Style
 - Direct, solution-focused
@@ -120,17 +122,17 @@ Career transition: IC → Director track, targeting $165-180K
 ## Insecurities to Watch
 1. "How technical is technical enough?" anxiety
 2. Post-presentation self-doubt
-3. Missing leadership confidence from Shambhala days
+3. Missing leadership confidence had prior role
 ```
 
 ### 2.2 Using Telos Context
 
 ```bash
 # Any Fabric pattern with your context
-echo "your input" | fabric -C telos -p pattern_name
+echo "your input" | fabric -C telos.md -p pattern_name
 
 # Example: Summarize with your context
-echo "Meeting notes..." | fabric -C telos -p summarize
+echo "Meeting notes..." | fabric -C telos.md -p summarize -m "gemma3:latest"
 ```
 
 ---
@@ -380,11 +382,17 @@ On your Raspberry Pi n8n instance, create this workflow:
 - Filter: From `my@remarkable.com` (or whatever ReMarkable uses)
 - Or filter by subject containing "ReMarkable" or your notebook name
 
-**Node 2: Extract Attachment**
-- If PDF: Use n8n's PDF Extract node or call an external tool
-- If text/HTML: Parse directly
+**Node 2: Add a "Gmail" node**
+- Add a new node: Gmail (not Gmail Trigger)
+- Operation: Get Message
+- Message ID: {{ $json.id }} (from the trigger)
+- Add Options → Download Attachments: true
 
-**Node 3: Format Output**
+**Node 3: Extract Attachment**
+- If PDF: Use n8n's PDF Extract node or call an external tool
+- Input Binary Field = attachment_0
+
+**Node 4: Format Output**
 ```javascript
 // In a Code node
 const today = new Date().toISOString().split('T')[0];
