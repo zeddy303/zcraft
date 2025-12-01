@@ -1,5 +1,5 @@
 # Personal AI Infrastructure Implementation Guide v2
-## Zane's Setup - Bazzite Linux + Obsidian + n8n + Fabric
+## Zcraft Setup - Bazzite Linux + Obsidian + n8n + Fabric
 
 ---
 
@@ -600,5 +600,6 @@ https://rpi-tailscale.tailc273b5.ts.net:5678
 ```
 
 ---
+https://opensource.org/license/MIT
 
 *This infrastructure grows with you. Start simple, add complexity as needed.*
